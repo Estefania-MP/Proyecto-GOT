@@ -31,51 +31,67 @@
 <body>
     <!-- Header -->
 <header>
-    <nav class="navbar navbar-expand-lg bg-black fixed-top">
-        <div class="container">
-          <a class="navbar-brand p-0" href="index.html">
-            <img class="rounded-pill" src="/img/gotLogo.svg" alt="" width="70" height="50">
-          </a>
-        </div>
-        <div class="container-fluid">
-            <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item ">
-                  <a class="nav-link active text-white" aria-current="page" href="/index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active text-white" href="#">Contacto</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active text-white" href="#">Registrarse</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active text-white" href="/pages/tienda.html">Tienda</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Casas GOT
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark bg-black">
-                      <li><a class="dropdown-item text-white" href="#">Casa Targaryen</a></li>
-                      <li><a class="dropdown-item text-white" href="#">Casa Lannister</a></li>
-                      <li><a class="dropdown-item text-white" href="#">Casa Arryn</a></li>
-                      <li><a class="dropdown-item text-white" href="#">Casa Stark</a></li>
-                      <li><a class="dropdown-item text-white" href="#">Casa Greyjoy</a></li>
-                      <li><a class="dropdown-item text-white" href="#">Casa Martell</a></li>
-                      <li><a class="dropdown-item text-white" href="#">Casa Tully</a></li>
-                      <li><a class="dropdown-item text-white" href="#">Casa Baratheon</a></li>
-                      <li><a class="dropdown-item text-white" href="#">Casa Tyrrell</a></li>
-                      
-                    </ul>
-                  </li>
-              </ul>
-            </div>
+  <nav>
+  <div class="navbar navbar-expand-lg navbar-dark bg-black shadow-sm fixed-top">
+    <div class="container">
+      <!-- Logo -->
+      <a href="/index.html" class="navbar-brand m-0">
+        <img class="rounded-pill" src="/img/gotLogo.svg" alt="Logo GOT" width="70" height="50">
+      </a>
+      <div class="containerposition-absolute start-0" >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- lista nav -->
+      <div class="collapse navbar-collapse row" id="navbarHeader">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item ">
+            <a class="nav-link active text-white" aria-current="page" href="/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-white" href="#">Registrarse</a>
+          </li>
+          <!-- Carrito -->
+          <div class="row">
+            <ul>
+              <li class="nav-item active carrito m-2 submenu">
+                <a href="#" class="fa fa-cart-shopping"></a>
+                <div id="carrito">
+                  <p class="vacio">Carrito</p>
+                  <table id="lista-carrito" class="table table-black table-hover">
+                    <!-- titulos -->
+                    <thead>
+                      <tr>
+                        <th class="p-3 m-3 text-light">Imagen</th>
+                        <th class="p-3 m-3 text-light">Productos</th>
+                        <th class="p-3 m-3 text-light">Precio</th>
+                        <th class="p-3 m-3 text-light" >Cantidad</th>
+                      </tr>
+                    </thead>
+                  
+                    <tbody class="tbody" >
+
+                    </tbody>
+                  </table>
+                  <div class="row ">
+                  <div class="col">
+                    <h2 class="itemCartTotal">Total: 0</h2>
+                    <div class="col d-flex justify-content-end">
+                      <button class="btn btn-dark">Comprar</button>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </li>
+            </ul>
           </div>
-      </nav>
+          <!-- Fin Carrito -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</nav>
 </header>
 <!-- Fin Header -->
 
@@ -132,80 +148,97 @@
 
 <!-- Seccion Productos -->
 <section class="bg-black">
-    <!-- Primera fila -->
-    <div class="container pt-5 cards-wrapper py-5" >
-        <div class="card border-white bg-black " style="width: 18rem;">
-            <!-- IMG P -->
-            <img src="/img/P-cajita.svg" class="card-img-top" height="260" alt="Cajita musical">
+    <!-- Primera fila de productos -->
+
+    <div id="lista-productos" class=" pt-5 pb-5 row m-0 row-cols-1 row-cols-sm-2 row cols-md-3 g-3" >
+      <!-- Trajeta 1 -->
+        <div class="card bg-black p-lg-4 m-md-4 " style="width: 18rem;">
+             <!-- IMG P  -->
+            <img src="/img/P-cajita.svg" class="card-img-top" class="imagen-producto" height="240" alt="Cajita musical">
             <div class="card-body">
-                <!-- Nombre P -->
-              <h5 class="card-title text-center text-white">Cajita Musical</h5>
-              <!-- Precio P -->
+                 <!-- Nombre P  -->
+              <h5 class="card-title text-center text-white titulo">Cajita Musical</h5>
+              <!-- Precio P  -->
               <div class="text-center text-white">
                 <span class="text-muted text-decoration-line-through">$11.200</span><br>
-              $9.700
+              <p class="precio">$9700</p>
               </div><br>
-              <!-- Boton Compra -->
-              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                <div class="text-center "><a class="btn btn-outline-dark mt-auto text-white" href="#">Comprar</a></div>
+              <!-- Boton Compra  -->
+              <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group ">
+                <div class="text-center "><a class="btn btn-outline-dark text-white" href="#">Detalle</a></div>
             </div>
+            <a href="#" class="btn btn-outline-dark text-white agregar-carrito button" data-id="">Comprar</a>
             </div>
           </div>
-            <div class="card border-white bg-black" style="width: 18rem;">
-                <!-- IMG P -->
+          </div>
+          <!-- Tarjeta 2 -->
+            <div class="card bg-black p-lg-4 m-md-4" style="width: 18rem;">
+                 <!-- IMG P  -->
                 <img src="/img/P-lampara.svg" class="card-img-top" alt="Lampara de dragon">
                 <div class="card-body">
-                    <!-- Nombre P -->
+                     <!-- Nombre P  -->
                   <h5 class="card-title text-center text-white">Lampara de Dragon</h5>
                   <!-- Precio P -->
                   <div class="text-center text-white">
                     <span class="text-muted text-decoration-line-through ">$14.720</span><br>
-                  $12.800
+                  <p class="precio">$12800</p>
                   </div><br>
-                  <!-- Boton Compra -->
-                  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                    <div class="text-center "><a class="btn btn-outline-dark mt-auto text-white" href="#">Comprar</a></div>
+                 <!-- Boton Compra  -->
+                 <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group ">
+                    <div class="text-center "><a class="btn btn-outline-dark text-white" href="#">Detalle</a></div>
+                </div>
+                <a class="button btn btn-outline-dark text-white" href="#" >Comprar</a>
                 </div>
                 </div>
               </div>
-              <div class="card border-white bg-black" style="width: 18rem;">
-                <!-- IMG P -->
-                <img src="/img/P-corbata.svg" class="card-img-top" height="260" alt="Corbata">
+              <!-- Tarjeta 3 -->
+              <div class="card bg-black p-lg-4 m-md-4" style="width: 18rem;">
+                <!-- IMG P  -->
+                <img src="/img/P-corbata.svg" class="card-img-top" height="240" alt="Corbata">
                 <div class="card-body">
-                    <!-- Nombre P -->
+                     <!-- Nombre P -->
                   <h5 class="card-title text-center text-white">Corbata</h5>
-                  <!-- Precio P -->
+                   <!-- Precio P -->
                   <div class="text-center text-white">
-                    <span class="text-muted text-decoration-line-through ">$8.625</span><br>
-                  $7.500
+                    <span class="text-muted text-decoration-line-through">$8.625</span><br>
+                  <p class="precio">$7500</p>
                   </div><br>
-                  <!-- Boton Compra -->
-                  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                    <div class="text-center"><a class="btn btn-outline-dark mt-auto text-white" href="#">Comprar</a></div>
-                </div>
+                   <!-- Boton Compra -->
+                   <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group ">
+                      <div class="text-center "><a class="btn btn-outline-dark text-white" href="#">Detalle</a></div>
+                  </div>
+                  <a class="btn btn-outline-dark text-white agregar-carrito button" href="#"  data-id="3" >Comprar</a>
+                  </div>
                 </div>
               </div>
-              <div class="card border-white bg-black" style="width: 18rem;">
-                <!-- IMG P -->
+              <!-- Tarjeta 4 -->
+              <div class="card bg-black p-lg-4 m-md-4" style="width: 18rem;">
+                 <!-- IMG P  -->
                 <img src="/img/P-pin.svg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <!-- Nombre P -->
+                    <!-- Nombre P  -->
                   <h5 class="card-title text-center text-white">Pin</h5>
-                  <!-- Precio P -->
+                   <!-- Precio P  -->
                   <div class="text-center text-white">
-                    <span class="text-muted text-decoration-line-through ">$2875</span><br>
-                  $2.500
+                    <span class="text-muted text-decoration-line-through">$2875</span><br>
+                  <p class="precio">$2500</p>
                   </div><br>
-                  <!-- Boton Compra -->
-                  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                    <div class="text-center"><a class="btn btn-outline-dark mt-auto text-white" href="#">Comprar</a></div>
-                </div>
+                  <!-- Boton Compra  -->
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group ">
+                      <div class="text-center "><a class="btn btn-outline-dark text-white" href="#">Detalle</a></div>
+                  </div>
+                  <a class="btn btn-outline-dark text-white agregar-carrito button" href="#"  data-id="4">Comprar</a>
+                  </div>
                 </div>
               </div>
         </div>
     </div>
     <!-- Fin Primera fila -->
-    
+
 </section>
 <!-- Seccion Productos -->
 <!-- Fin Secciones -->

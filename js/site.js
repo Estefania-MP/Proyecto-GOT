@@ -1,86 +1,117 @@
-// Variables
 
-const listaDeProductos = [
-    {nombre: "Lampara de Dragon", precio: 12800},
-    {nombre: "Cajita Musical", precio: 9700},
-    {nombre: "Corbata", precio: 7500},
-    {nombre: "Pin GOT", precio: 2500},
-    {nombre: "Taza GOT", precio: 2000},
-    {nombre: "Mazo de Cartas GOT", precio:900},
-];
+//Variables
+const Clickbutton = document.querySelectorAll('.button')
+const tbody = document.querySelector('.tbody')
+let carrito = []
 
-let carrito = [];
+// Para la funcionalidad de los botones comprar
+Clickbutton.forEach(btn => {
+    btn.addEventListener('click',addToCarritoItem)
+})
 
+//Funciones para añadir los productos al carrito
+ function addToCarritoItem(e){
+ const button = e.target
+ const item = button.closest('.card')
+ const itemTitle = item.querySelector('.card-title').textContent;
+ const itemPrice = item.querySelector('.precio').textContent;
+ const itemImg = item.querySelector('.card-img-top').src;
+ const newItem = {
+     title: itemTitle,
+     precio: itemPrice,
+     img: itemImg,
+     cantidad: 1
+ }
+ addItemCarrito(newItem)
+ }
 
-let seleccionProductos = prompt("Indicanos con si o no si queres saber cuales son nuestros productos!")
+ function addItemCarrito(newItem){
+     const InputElemento = tbody.getElementsByClassName('input_elemento')
+     for(let i =0; i < carrito.length ; i++){
+         if(carrito[i].title.trim() === newItem.title.trim()){
+         carrito[i].cantidad ++;
+         const inputValue = InputElemento[i]
+        inputValue.value++;
+         CarritoTotal()
+          return null;
+         }
+     }
+     carrito.push(newItem)
+     renderCarrito()
+ }
 
+ //Funcion para que el porducto se vea reflejado en el carrito
+ function renderCarrito(){
+    console.log(carrito)
+    tbody.innerHTML = ''
+     carrito.map(item => {
+         const tr = document.createElement('tr')
+         tr.classList.add('ItemCarrito')
+         const Content = `
+         <td class="table_productos" ><img src=${item.img} alt=""></td>
+         <td> <h5 class="title text-white">${item.title}</h5></td>
+         <td class="table_price text-white"><p>${item.precio}</p></td>
+         <td class="table_cantidad"> <input type="number" min="1" class="input_elemento" value=${item.cantidad}></td>
+         <td> <button class="delete btn btn-danger">X</button></td>
+         `;
+         tr.innerHTML = Content;
+         tbody.append(tr)
 
-// Bucles interactivos y funciones flecha:
+         tr.querySelector(".delete").addEventListener('click', removeItemCarrito)
+         tr.querySelector(".input_elemento").addEventListener('change', sumaCantidad)
+     })
+     CarritoTotal()
+ }
 
-while (seleccionProductos != "si" && seleccionProductos != "no"){
-    alert("Por favor, ingresar si o no")
-    seleccionProductos = prompt ("Deseas comprar algo? Responder con si o no")
-}
+ //Funcion para que se sume el total a pagar por todos los productos
+ function CarritoTotal(){
+     let Total = 0;
+     const itemCartTotal = document.querySelector('.itemCartTotal')
+     carrito.forEach((item) => {
+         const precio = Number(item.precio.replace("$", ''))
+         Total = Total + precio*item.cantidad
+     })
+     itemCartTotal.innerHTML = `Total $${Total}`
+     addLocalStorage()
+ }
 
+ //Funcion para eliminar los productos del carrito
+ function removeItemCarrito(e){
+ const buttonDelete = e.target
+ const tr =  buttonDelete.closest(".ItemCarrito")
+ const title = tr.querySelector('.title').textContent;
+ for(let i=0; i<carrito.length ; i++){
+     if(carrito[i].title.trim() === title.trim()){
+         carrito.splice(i, 1)
+     }
+ }
+ tr.remove()
+ CarritoTotal()
+ }
 
-if(seleccionProductos == "si"){
-    alert("Te mostramos nuestra lista de productos")
-    let todosLosProductos = listaDeProductos.map((producto) => producto.nombre + " " + "$" + producto.precio);
-
-    alert(todosLosProductos.join(" - "))
-}
-else if(seleccionProductos == "no"){
-    alert("Gracias por visitar nuetro sitio, hasta pronto!")
-}
-
-while (seleccionProductos != "no"){
-    let producto = prompt("Agrega un producto al carrito")
-    let precio = 0
-
-    if (producto == "Lampara de Dragon" || producto == "Cajita Musical" || producto == "Corbata" || producto == "Pin GOT" || producto == "Taza GOT" || producto == "Mazo de Cartas GOT"){
-        switch(producto){
-            case "Lampara de Dragon":
-                precio = 12800
-                break; 
-            case "Cajita Musical":
-                precio = 9700
-                break;
-            case "Corbata":
-                precio = 7500
-                break;
-            case "Pin GOT":
-                precio = 2500
-                break;
-            case "Taza GOT":
-                precio = 2000
-                break;
-            case "Mazo de Cartas GOT":
-                precio = 900
-                break;
-            default:
-                break;
+ //Funcion para que se pueda sumar la cantidad de un mismo producto de forma manual en el carrito
+ function sumaCantidad(e){
+    const sumaInput = e.target 
+    const tr = sumaInput.closest(".ItemCarrito")
+    const title = tr.querySelector('.title').textContent;
+    carrito.forEach(item => {
+        if(item.title.trim() === title){
+            sumaInput.value < 1 ? (sumaInput.value = 1) : sumaInput.value;
+            item.cantidad = sumaInput.value;
+            CarritoTotal()
         }
-     let unidades = parseInt(prompt("Cuantas unidades vas a comprar?")) 
-     
-     carrito.push({producto, unidades, precio})
-     console.log(carrito);
-    } else {
-        alert("El producto que indicas no esta en nuestro stock")
+    })
+ }
+
+ //Funcion para que al actualizar la web no se eliminen los producto añadidos al carrito 
+ function addLocalStorage(){
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+ }
+
+ window.onload = function(){
+    const storage = JSON.parse(localStorage.getItem('carrito'));
+    if(storage){
+        carrito = storage;
+        renderCarrito()
     }
-
-    seleccionProductos = prompt("Añadiras otro producto al carrito?")
-    while(seleccionProductos === "no"){
-        alert("Perfecto! A continuacion te informamos el detalle de tu compra")
-        carrito.forEach((carritoFinal) => {
-            console.log(`producto: ${carritoFinal.producto}, unidades: ${carritoFinal.unidades}, total a pagar: ${carritoFinal.unidades * carritoFinal.precio}`);
-            alert("Compraste: " + carritoFinal.unidades + " " + carritoFinal.producto + " valor $" + carritoFinal.unidades * carritoFinal.precio);
-            
-        })
-    break;
-    }
-}
-
-const total = carrito.reduce ((acc, el) => acc + el.precio * el.unidades, 0)
-console.log(`El total a pagar por la compra es: ${total}`)
-alert("El total a pagar es $" + total + "  ¡Gracias por la compra!");
-
+ }

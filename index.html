@@ -31,51 +31,55 @@
 <body>
     <!-- Header -->
 <header>
-    <nav class="navbar navbar-expand-lg bg-black fixed-top">
-        <div class="container">
-          <a class="navbar-brand p-0" href="index.html">
-            <img class="rounded-pill" src="/img/gotLogo.svg" alt="" width="70" height="50">
-          </a>
+  <nav>
+    <div class="navbar navbar-expand-lg navbar-dark bg-black shadow-sm fixed-top">
+      <div class="container">
+        <!-- Logo -->
+        <a href="/index.html" class="navbar-brand m-0">
+          <img class="rounded-pill" src="/img/gotLogo.svg" alt="Logo GOT" width="70" height="50">
+        </a>
+        <div class="containerposition-absolute start-0" >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- lista nav -->
+        <div class="collapse navbar-collapse" id="navbarHeader">
+          <ul class="navbar-nav">
+            <li class="nav-item ">
+              <a class="nav-link active text-white" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-white" href="#temporadas">Temporadas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-white" href="#personajes">Personajes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-white" href="/pages/tienda.html">Tienda</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Casas GOT
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark bg-black">
+                  <li><a class="dropdown-item text-white" href="#">Casa Targaryen</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Casa Lannister</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Casa Arryn</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Casa Stark</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Casa Greyjoy</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Casa Martell</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Casa Tully</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Casa Baratheon</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Casa Tyrrell</a></li>
+                  
+                </ul>
+              </li>
+          </ul>
         </div>
-        <div class="container-fluid">
-            <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item ">
-                  <a class="nav-link active text-white" aria-current="page" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active text-white" href="#temporadas">Temporadas</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active text-white" href="#personajes">Personajes</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active text-white" href="/pages/tienda.html">Tienda</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Casas GOT
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark bg-black">
-                      <li><a class="dropdown-item text-white" href="#">Casa Targaryen</a></li>
-                      <li><a class="dropdown-item text-white" href="#">Casa Lannister</a></li>
-                      <li><a class="dropdown-item text-white" href="#">Casa Arryn</a></li>
-                      <li><a class="dropdown-item text-white" href="#">Casa Stark</a></li>
-                      <li><a class="dropdown-item text-white" href="#">Casa Greyjoy</a></li>
-                      <li><a class="dropdown-item text-white" href="#">Casa Martell</a></li>
-                      <li><a class="dropdown-item text-white" href="#">Casa Tully</a></li>
-                      <li><a class="dropdown-item text-white" href="#">Casa Baratheon</a></li>
-                      <li><a class="dropdown-item text-white" href="#">Casa Tyrrell</a></li>
-                      
-                    </ul>
-                  </li>
-              </ul>
-            </div>
-          </div>
-      </nav>
+      </div>
+    </div>
+  </div>
+  </nav>
 </header>
 <!-- Fin Header -->
 

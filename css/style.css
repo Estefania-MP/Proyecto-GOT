@@ -23,7 +23,43 @@ display:flex;
     width: 100%;
     max-height: 100%;
 }
+.carrito a{
+  color: #FFFFFF;
+  display: inline-block;
+}
+.submenu{
+  position: relative;
+}
+.submenu #carrito{
+  display: none;
+}
+.submenu:hover #carrito{
+  display: block;
+  color: #FFFFFF;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 1;
+  background-color: #131313;
+  padding: 20px;
+  border-radius: 20px;
+}
+.submenu img{
+  width: 100px;
+}
+.vacio{
+  padding: 10px;
+  background-color: #A8AC5C;
+  text-align: center;
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+}
+.buttoncar{
+  background-color: #A8AC5C;
+  color: rgb(255, 255, 255);
+}
 
+/*Footer*/
 .footer {
     width: 100%;
     background-color: #000000;
