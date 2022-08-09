@@ -1,4 +1,6 @@
 
+//         CARRITO       
+
 //Variables
 const Clickbutton = document.querySelectorAll('.button')
 const tbody = document.querySelector('.tbody')
@@ -42,7 +44,6 @@ Clickbutton.forEach(btn => {
 
  //Funcion para que el porducto se vea reflejado en el carrito
  function renderCarrito(){
-    console.log(carrito)
     tbody.innerHTML = ''
      carrito.map(item => {
          const tr = document.createElement('tr')
@@ -114,4 +115,28 @@ Clickbutton.forEach(btn => {
         carrito = storage;
         renderCarrito()
     }
+ }
+
+ //         FILTRO
+ //Variables
+ const btn = document.querySelectorAll('.btnf');
+ const storeProducts = document.querySelectorAll(".store-product");
+
+ //Bucle para efectuar el filtro
+ for(i = 0; i < btn.length; i++){
+    btn[i].addEventListener("click", (e) => {
+        e.preventDefault();
+        const filter = e.target.dataset.filter;
+        storeProducts.forEach((product) => {
+            if (filter == "all"){
+                product.style.display = "block"
+            } else {
+                if (product.classList.contains(filter)){
+                    product.style.display = "block"
+                } else {
+                    product.style.display = "none"
+                }
+            }
+        })
+    })
  }

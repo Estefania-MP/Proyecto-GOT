@@ -59,6 +59,11 @@ display:flex;
   color: rgb(255, 255, 255);
 }
 
+/*Filtro*/
+.category_list .ct_item-active {
+  background-color: #A8AC5C;
+
+}
 /*Footer*/
 .footer {
     width: 100%;
