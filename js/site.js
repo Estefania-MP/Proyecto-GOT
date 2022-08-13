@@ -140,3 +140,155 @@ Clickbutton.forEach(btn => {
         })
     })
  }
+
+ // Aplicando jquery para que el detalle del producto se vea como un alert
+
+ const btnD1 = document.querySelector('#myBtn')
+ btnD1.addEventListener('click', () => {
+    Swal.fire({
+        title: 'Cajita Musical',
+        text: 'Cajita Musical en color negro a manivela con la melodía de la serie Game of Thrones',
+        color: 'white',
+        imageUrl: '	http://127.0.0.1:5500/img/P-cajita.svg',
+        imageWidth: 250,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+        background: '#3D3D3D',
+        confirmButtonText: 'Volver',
+       })
+ });
+
+ const btnD2 = document.querySelector('#myBtn2')
+ btnD2.addEventListener('click', () => {
+    Swal.fire({
+        title: 'Lampara de Dragon',
+        text: 'Lampara de dragón hecha en PLA con impresora 3D',
+        color: 'white',
+        imageUrl: 'http://127.0.0.1:5500/img/P-lampara.svg',
+        imageWidth: 250,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+        background: '#3D3D3D',
+        confirmButtonText: 'Volver',
+       })
+ });
+
+ const btnD3 = document.querySelector('#myBtn3')
+ btnD3.addEventListener('click', () => {
+    Swal.fire({
+        title: 'Corbata logo casa Stark',
+        text: 'Corbata en color verde que presenta el emblema del lobo huargo de House Stark estampado en el frente',
+        color: 'white',
+        imageUrl: 'http://127.0.0.1:5500/img/P-corbata.svg',
+        imageWidth: 250,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+        background: '#3D3D3D',
+        confirmButtonText: 'Volver',
+       })
+ });
+
+ const btnD4 = document.querySelector('#myBtn4')
+ btnD4.addEventListener('click', () => {
+    Swal.fire({
+        title: 'Pin',
+        text: 'Broche de solapa de Game of Thrones con acabado antiguo y baño de oro',
+        color: 'white',
+        imageUrl: 'http://127.0.0.1:5500/img/P-pin.svg',
+        imageWidth: 250,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+        background: '#3D3D3D',
+        confirmButtonText: 'Volver',
+       })
+ });
+
+ const btnD5 = document.querySelector('#myBtn5')
+ btnD5.addEventListener('click', () => {
+    Swal.fire({
+        title: 'Stark Sigilo Gemelos',
+        text: 'Gemelo troquelado acabado envejecido con baño de color plateado',
+        color: 'white',
+        imageUrl: 'http://127.0.0.1:5500/img/P-gemelos.webp',
+        imageWidth: 250,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+        background: '#3D3D3D',
+        confirmButtonText: 'Volver',
+       })
+ });
+
+ const btnD6 = document.querySelector('#myBtn6')
+ btnD6.addEventListener('click', () => {
+    Swal.fire({
+        title: 'Vaso de pinta',
+        text: 'Vaso de vidrio con la icónica línea de Tyrion en la parte delantera',
+        color: 'white',
+        imageUrl: '	http://127.0.0.1:5500/img/P-vaso.webp',
+        imageWidth: 250,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+        background: '#3D3D3D',
+        confirmButtonText: 'Volver',
+       })
+ });
+
+ const btnD7 = document.querySelector('#myBtn7')
+ btnD7.addEventListener('click', () => {
+    Swal.fire({
+        title: 'Remera Mother of Dragons',
+        text: 'Remera en color negro con el logo estampado de Mother of Dragons en rojo, talle unico',
+        color: 'white',
+        imageUrl: '	http://127.0.0.1:5500/img/P-remera.webp',
+        imageWidth: 250,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+        background: '#3D3D3D',
+        confirmButtonText: 'Volver',
+       })
+ });
+
+ const btnD8 = document.querySelector('#myBtn8')
+ btnD8.addEventListener('click', () => {
+    Swal.fire({
+        title: 'Cartas temáticas de Game of Thrones',
+        text: 'Barajas de cartas temáticas de Game of Thrones, miden 2,5 x 3,5 y tienen un acabado tipo lino',
+        color: 'white',
+        imageUrl: 'http://127.0.0.1:5500/img/P-cartas.webp',
+        imageWidth: 250,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+        background: '#3D3D3D',
+        confirmButtonText: 'Volver',
+       })
+ });
+
+ const btnD9 = document.querySelector('#myBtn9')
+ btnD9.addEventListener('click', () => {
+    Swal.fire({
+        title: 'Tabla para servir artesanal',
+        text: ' Tabla de quesos o para cortar con un borde vivo en el costado de la tabla y una cuerda rústica en el extremo del mango',
+        color: 'white',
+        imageUrl: '	http://127.0.0.1:5500/img/P-tabla.webp',
+        imageWidth: 250,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+        background: '#3D3D3D',
+        confirmButtonText: 'Volver',
+       })
+ });
+
+ const btnD10 = document.querySelector('#myBtn10')
+ btnD10.addEventListener('click', () => {
+    Swal.fire({
+        title: 'Rompecabezas 3D La Fortaleza Roja',
+        text: ' Este rompecabezas es una réplica exclusiva de 845 piezas del castillo de King Landing ',
+        color: 'white',
+        imageUrl: 'http://127.0.0.1:5500/img/P-rompecabezas.webp',
+        imageWidth: 250,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+        background: '#3D3D3D',
+        confirmButtonText: 'Volver',
+       })
+ });
