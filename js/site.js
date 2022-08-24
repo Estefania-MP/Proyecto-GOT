@@ -1,5 +1,5 @@
 
-//         CARRITO       
+//         CARRITO DE COMPRAS      
 
 //Variables
 const Clickbutton = document.querySelectorAll('.button')
@@ -117,7 +117,8 @@ Clickbutton.forEach(btn => {
     }
  }
 
- //         FILTRO
+ //         FILTRO DE LISTADO DE PRODUCTOS SEGUN CATEGORIA
+
  //Variables
  const btn = document.querySelectorAll('.btnf');
  const storeProducts = document.querySelectorAll(".store-product");
@@ -141,7 +142,9 @@ Clickbutton.forEach(btn => {
     })
  }
 
- // Aplicando jquery para que el detalle del producto se vea como un alert
+ //         DETALLE DE PRODUCTOS
+
+ // Aplicando jquery para que el detalle del producto se vea como un alert al clickeat el boton de detalle
 
  const btnD1 = document.querySelector('#myBtn')
  btnD1.addEventListener('click', () => {
@@ -292,3 +295,45 @@ Clickbutton.forEach(btn => {
         confirmButtonText: 'Volver',
        })
  });
+
+
+ //            INSERTANDO API
+
+ // Fetch para insertar api con los datos de una de las casa mas importante de GOT
+
+ const url = 'https://anapioficeandfire.com/api/houses/378';
+
+ fetch(url)
+ .then(Response => Response.json())
+ .then(data => {
+    let element = document.getElementById ('elem')
+    element.innerHTML = `
+    <table class="table table-bordered border-warning" style="--bs-border-opacity: .3;">
+            <thead class="text-center text-white" style="--bs-text-opacity: .5;">
+                <tr>
+                    <th>Casa</th>
+                    <th>Region</th>
+                    <th>Escudo de Armas</th>
+                    <th>Frase</th>
+                    <th>Armas ansestrales</th>
+                </tr>
+            </thead>
+            <tbody class="text-center text-white" style="--bs-text-opacity: .3;">
+                <tr>
+                    <td><b>${data.name}</b></td>
+                    <td><b>${data.region}</b></td>
+                    <td>${data.coatOfArms}</td>
+                    <td>${data.words}</td>
+                    <td>${data.ancestralWeapons}</td>
+                </tr>
+                
+            </tbody>
+          </table>
+    `
+    console.log(data)
+ })
+
+
+ 
+
+

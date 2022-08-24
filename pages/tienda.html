@@ -48,9 +48,6 @@
           <li class="nav-item ">
             <a class="nav-link active text-white" aria-current="page" href="/index.html">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active text-white" href="#">Registrarse</a>
-          </li>
           <!-- Carrito -->
           <div class="row">
             <ul>
@@ -140,8 +137,8 @@
 <!-- Secion Buscador -->
 
 <!-- Seccion Productos -->
-<section class="bg-black" id="store-products">
-    <div id="lista-productos" class=" pt-5 pb-5 row m-0 row-cols-1 row-cols-sm-2 row cols-md-3 g-3" >
+<section class="bg-black" id="store-products" >
+    <div id="lista-productos" id="list" class=" pt-5 pb-5 row m-0 row-cols-1 row-cols-sm-2 row cols-md-3 g-3" >
       <!-- Trajeta 1 -->
         <div class="card bg-black p-lg-4 m-md-4 store-product decoracion" style="width: 18rem;" data-product="decoracion">
              <!-- IMG P  -->
@@ -393,6 +390,10 @@
     </div>
 </footer>
 <!-- Fin Footer -->
+<span class="tbody"></span>
+    <span class="itemCartTotal"></span>
+    <span id="myBtn"></span>
+    <span id="elem"></span>
 
 <!-- Jquery 3.6.0-->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -404,6 +405,8 @@
 
 <!-- Javascript -->
 <script src="/js/site.js"></script>
+<!-- JSON -->
+<pre src="../data/productos.json"></pre>
 </body>
 
 
